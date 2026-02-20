@@ -242,14 +242,39 @@
         }
         window.onload = startTimer;
 
-        // Selector de Color Dinámico
-        function changeColor(color) {
-            // Referencias a las imágenes
-            const hero = document.getElementById('main-hero');
-            const carrusel1 = document.getElementById('carrusel-1');
-            const carrusel2 = document.getElementById('carrusel-2');
-            const btnCompra = document.getElementById('checkout-btn');
+       // Selector de Color Dinámico (Versión Formulario POST)
+function changeColor(color) {
+    const hero = document.getElementById('main-hero');
+    const carrusel1 = document.getElementById('carrusel-1');
+    const carrusel2 = document.getElementById('carrusel-2');
+    
+    // Apuntamos al input oculto del formulario
+    const inputVariante = document.getElementById('variante-tiendanube');
 
+    document.body.style.opacity = "0.7";
+    
+    setTimeout(() => {
+        if(color === 'rosa') {
+            hero.src = 'img/rosa-hero.jpg';
+            carrusel1.src = 'img/rosa-manta.jpg';
+            carrusel2.src = 'img/rosa-mudas.jpg';
+            inputVariante.value = 'AQUI_TU_ID_ROSA'; // Ej: '123456'
+            
+        } else if(color === 'gris') {
+            hero.src = 'img/gris-hero.jpg';
+            carrusel1.src = 'img/gris-manta.jpg';
+            carrusel2.src = 'img/gris-mudas.jpg';
+            inputVariante.value = 'AQUI_TU_ID_GRIS'; 
+            
+        } else if(color === 'celeste') {
+            hero.src = 'img/celeste-hero.jpg';
+            carrusel1.src = 'img/celeste-manta.jpg';
+            carrusel2.src = 'img/celeste-mudas.jpg';
+            inputVariante.value = '1244596431'; 
+        }
+        document.body.style.opacity = "1";
+    }, 200);
+}
             // Feedback visual suave
             document.body.style.opacity = "0.7";
             
