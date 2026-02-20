@@ -183,12 +183,15 @@
                 </div>
             </div>
 
-            <a id="checkout-btn" href="https://www.tiendaesperandote.com.ar/cart/add/ID_ROSA" 
-               onclick="fbq('track', 'InitiateCheckout', {value: 150000, currency: 'ARS'});"
-               class="block w-full py-6 rounded-full text-2xl font-bold bg-[#2C3E50] text-white hover:scale-105 transition-all shadow-2xl">
-                COMPRAR Y RECIBIR EN CASA
-            </a>
-            
+            <form action="https://www.tiendaesperandote.com.ar/cart/add/" method="POST" class="w-full">
+    <input type="hidden" name="add_to_cart" id="variante-tiendanube" value="ID_POR_DEFECTO">
+    
+    <button type="submit" 
+            onclick="fbq('track', 'InitiateCheckout', {value: 150000, currency: 'ARS'});"
+            class="block w-full py-6 rounded-full text-2xl font-bold bg-[#2C3E50] text-white hover:scale-105 transition-all shadow-2xl cursor-pointer">
+        COMPRAR Y RECIBIR EN CASA
+    </button>
+</form>
             <p class="mt-6 text-sm text-gray-400 font-semibold uppercase tracking-widest flex items-center justify-center gap-2">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                 Pago 100% Seguro por Tiendanube
